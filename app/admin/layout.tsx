@@ -1,7 +1,6 @@
 'use client';
 
 import { useAuth } from '@/context/AuthContext';
-import { useTheme } from '@/context/ThemeContext';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
@@ -11,21 +10,7 @@ export default function AdminLayout({
     children: React.ReactNode;
 }) {
     const { user, isAdmin, loading } = useAuth();
-    const { theme } = useTheme();
     const router = useRouter();
-
-    // Force dark mode in admin panel
-    useEffect(() => {
-        // Always remove light class to force dark mode
-        document.documentElement.classList.remove('light');
-
-        // Cleanup: restore the user's preferred theme when leaving admin
-        return () => {
-            if (theme === 'light') {
-                document.documentElement.classList.add('light');
-            }
-        };
-    }, [theme]);
 
     useEffect(() => {
         if (!loading) {

@@ -177,21 +177,14 @@ export default function Navbar() {
                         </div>
 
                         {/* Theme Toggle */}
-                        {mounted && (
-                            <button
-                                onClick={toggleTheme}
-                                className="p-2 rounded-lg hover:bg-muted transition-colors text-foreground"
-                            >
-                                {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-                            </button>
-                        )}
+
 
                         {/* Auth Buttons */}
                         {user ? (
                             <div className="hidden md:flex items-center gap-2">
                                 {isAdmin && (
                                     <Link href="/admin">
-                                        <Button variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-white">
+                                        <Button size="sm">
                                             Admin Panel
                                         </Button>
                                     </Link>

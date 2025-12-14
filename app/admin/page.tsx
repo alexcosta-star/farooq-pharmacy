@@ -25,7 +25,7 @@ export default function AdminDashboard() {
         <div className="space-y-6">
             <div className="flex justify-between items-center mb-6">
                 <h2 className="text-3xl font-bold tracking-tight text-white">Dashboard</h2>
-                <Button variant="secondary" onClick={signOut} className="text-white hover:bg-slate-700">
+                <Button variant="secondary" onClick={signOut} className="text-black hover:bg-slate-700 hover:text-white">
                     <LogOut className="mr-2 h-4 w-4" /> Sign Out
                 </Button>
             </div>

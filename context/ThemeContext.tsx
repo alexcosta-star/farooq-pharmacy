@@ -15,24 +15,22 @@ const ThemeContext = createContext<ThemeContextType>({
 });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-    const [theme, setTheme] = useState<Theme>('dark');
+    const [theme, setTheme] = useState<Theme>('light');
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
         setMounted(true);
-        // Check localStorage for saved theme
-        const savedTheme = localStorage.getItem('theme') as Theme;
-        if (savedTheme) {
-            setTheme(savedTheme);
-            document.documentElement.classList.toggle('light', savedTheme === 'light');
-        }
+        // Force light mode
+        setTheme('light');
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+        localStorage.setItem('theme', 'light');
     }, []);
 
     const toggleTheme = () => {
-        const newTheme = theme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
-        document.documentElement.classList.toggle('light', newTheme === 'light');
+        setTheme('light');
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
     };
 
     // Prevent hydration mismatch

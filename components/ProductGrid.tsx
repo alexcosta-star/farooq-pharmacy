@@ -150,8 +150,8 @@ export default function ProductGrid() {
                                             key={i}
                                             onClick={() => setCurrentPage(i + 1)}
                                             className={`h-10 w-10 rounded-lg font-medium transition-colors ${currentPage === i + 1
-                                                    ? 'bg-primary text-primary-foreground'
-                                                    : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                                                ? 'bg-primary text-primary-foreground'
+                                                : 'bg-muted text-muted-foreground hover:bg-muted/80'
                                                 }`}
                                         >
                                             {i + 1}

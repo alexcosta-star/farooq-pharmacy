@@ -265,7 +265,7 @@ export default function ProductManager() {
                                     {product.description}
                                 </p>
                                 <div className="flex justify-end gap-2">
-                                    <Button variant="secondary" size="sm" onClick={() => openEditModal(product)} className="text-white hover:bg-slate-700">
+                                    <Button variant="secondary" size="sm" onClick={() => openEditModal(product)} className="text-black hover:bg-slate-700 hover:text-white">
                                         <Pencil className="h-4 w-4 mr-1" /> Edit
                                     </Button>
                                     <Button variant="destructive" size="sm" onClick={() => handleDelete(product.id)}>
