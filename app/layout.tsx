@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: 'Farooq Pharmacy - Dera Ghazi Khan',
   description: 'Your trusted partner in health. Located at BLOCK NO 8 NEAR PAKISTANI CHOWK DERA GAZI, Dera Ghazi Khan, 32200.',
   keywords: 'pharmacy, medicine, dera ghazi khan, health, store, online pharmacy',
+  verification: {
+    google: 'XjyzzrgjaWXxgj5VVvSlx359h5GFQtExsF-MknXQJQs',
+  },
 };
 
 export default function RootLayout({
